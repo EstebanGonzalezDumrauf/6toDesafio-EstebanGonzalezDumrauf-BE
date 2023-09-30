@@ -5,17 +5,18 @@ import {
 import {
     cartModel
 } from '../dao/models/cart.js';
+import { authToken } from "../utils.js";
 
 const router = Router();
 
 const publicAccess = (req, res, next) => {
-    if (req.session.user) return res.redirect('/product');
+    if (req.session.user) return res.redirect('/products');
     next();
 }
 
 const privateAccess = (req, res, next) => {
     if (!req.session.user) {
-        return res.redirect('/login');
+        return res.redirect('/');
     }
     next();
 }
@@ -39,6 +40,7 @@ router.get('/resetPassword', publicAccess, (req, res)=> {
 })
 
 router.get('/products', privateAccess, async (req, res) => {
+//router.get('/products', authToken, async (req, res) => {
     const {
         page = 1
     } = req.query;

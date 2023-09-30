@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { userModel } from "../dao/models/user.js";
-import { createHash, isValidPassword } from "../utils.js";
+import { createHash, generateToken, isValidPassword } from "../utils.js";
 import passport from "passport";
 
 const router = Router();
@@ -19,6 +19,7 @@ router.get('/failLoginGit', (req, res) => {
     res.send({error: "Failed Login con GitHub"});
 });
 
+// ESTO FUNCIONABAAAAAA EN PASSPORT.JS
 router.post('/login', passport.authenticate('login', {failureRedirect: '/api/sessions/failLogin'}) ,async (req, res) => {
     if (!req.user) {
         console.log("entro aca ");
@@ -29,16 +30,50 @@ router.post('/login', passport.authenticate('login', {failureRedirect: '/api/ses
     res.send({status: "success", payload: req.user})
 });
 
+// router.post('/login', async (req, res) => {
+//     const { email, password } = req.body;
+//     let user = await userModel.findOne({ email });
+//     // if (username === "adminCoder@coder.com" && password === "adminCod3r123") {
+//     //     user = {
+//     //         first_name: "Super Usuario",
+//     //         last_name: "de CODER",
+//     //         email: "adminCoder@coder.com",
+//     //         rol: "Administrador"
+//     //     }
+//     //     return done(null, user);
+//     // }
+//     if (!user) {
+//         console.log("No existe el usuario")
+//         return res.status(401).send({ status: 'error'});
+//     }
+//     if (!isValidPassword(user, password)) {
+//         return res.status(403).send({ status: 'error'});
+//     }
+//     const accessToken = generateToken(user);
+//     res.send({status: "success", accessToken})
+// });
+
 router.get('/failLogin', (req,res)=> {
-    // if (req.user) {
-    //     return res.status(401).send({status: "error", error: "Credenciales invalidas"});
-    // }
     return res.status(400).send({status: "error", error: "Usuario no existe o password incorrecto"});
 });
 
+// ESTO FUNCIONABAAAAAA EN PASSPORT.JS
 router.post('/register', passport.authenticate('register', {failureRedirect: '/failRegister'}) ,async (req, res) => {
     res.send({status: "success", message: "Usuario registrado"})
 })
+// router.post('/register', (req, res) => {
+//     const { first_name, last_name, email, age, password } = req.body;
+
+//     const user = {
+//         first_name,
+//         last_name,
+//         email,
+//         age,
+//         password: createHash(password)
+//     }
+//     const accessToken = generateToken(user);
+//     res.send({status: "success", accessToken})
+// })
 
 router.get('/failRegister', async(req, res)=> {
     console.log("Fallo la estrategia");
