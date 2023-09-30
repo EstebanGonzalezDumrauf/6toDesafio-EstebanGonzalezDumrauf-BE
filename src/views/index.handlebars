@@ -1,0 +1,67 @@
+<div class="divLoggin">
+    <div class="container">
+        <div class="user-session">
+            <p class="msj-session">Bienvenido, <strong>{{user.first_name}} {{user.last_name}}</strong>!!!</p>
+            <p class="msj-session">{{user.rol}}</p>
+        </div>
+        <div class="logout">
+            <form id="log-out-session-Form" action="{{logout}}" method="post">
+                <input type="hidden">
+                <button class="Log-Out" type="submit">Salir</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    {{#each docs}}
+    <div class="product-container">
+        <div class="product-details">
+            <p class="product-title"> {{this._doc.title}}</p>
+            <p class="product-price"><strong>Precio:</strong> ${{this._doc.price}}</p>
+        </div>
+
+        <form action="{{cartUrl}}" method="post">
+            <input type="hidden" name="productId" value="{{this._doc._id}}">
+            <button class="add-to-cart-button" type="submit">Agregar al Carrito</button>
+        </form>
+        <div class="product-images">
+            {{#each this._doc.thumbnail}}
+            <img src="{{this}}" alt="Imagen del producto" class="product-image">
+            {{/each}}
+        </div>
+        <div>
+            <a href="/api/products/{{this._doc._id}}" class="product-button">Ver Más...</a>
+        </div>
+    </div>
+
+    {{/each}}
+    <div class="pagination-container">
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}" class="pagination-button">Anterior</a>
+        {{/if}}
+        {{#each pageNumbers}}
+        <a href="/products?page={{this}}" class="pagination-button">{{this}}</a>
+        {{/each}}
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}" class="pagination-button">Siguiente</a>
+        {{/if}}
+    </div>
+</div>
+<script src="/js/logOutManager.js"></script>
+
+
+
+
+{{!-- <h1>
+    Bienvenidos al CHAT de CODER
+</h1>
+<div>
+    <input id="chatBox">
+</div>
+<div>
+    <p id="messageLogs">
+    </p>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"> </script>
+<script src="/socket.io/socket.io.js"> </script>
+<script src="/js/index.js"> </script> --}}

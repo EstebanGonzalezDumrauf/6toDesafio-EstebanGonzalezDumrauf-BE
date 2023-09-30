@@ -1,0 +1,19 @@
+<div class="divLog">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label>Email</label>
+        <input name="email" id="email">
+        <br>
+        <label>Contraseña</label>
+        <input name="password" type="password">
+        <div>
+            <label id="msjError" class="error-message"></label>
+        </div>
+        <br>
+        <input type="submit">
+    </form>
+    <p class="registro">No estas registrado? <a href="/register">Registrate aqui</a></p>
+    <p class="registro">Olvidaste tu contraseña? <a href="/resetPassword">Restaurala aqui</a></p>
+    <p class="registro">Ingresar con GitHub <a href="/api/sessions/github">Hacé click acá</a></p>
+</div>
+<script src="/js/login.js"></script>

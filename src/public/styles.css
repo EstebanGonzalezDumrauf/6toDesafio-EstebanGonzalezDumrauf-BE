@@ -1,0 +1,335 @@
+/* styles.css */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cart-product-title {
+    font-size: 26px;
+    font-weight: bold;
+    color:#e91e63;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #ff6600; /* Color naranja para el precio */
+}
+
+.product-image {
+    max-width: 100px; /* Define el ancho máximo de la imagen */
+    max-height: 100px; /* Define la altura máxima de la imagen */
+    margin-left: 20px;
+    margin-right: 20px;
+
+    /* Ajustar margen entre las imágenes */
+    vertical-align: middle; /* Opcional: para alinear verticalmente las imágenes */
+}
+
+.product-thumbnail {
+    max-width: 50px; /* Define el ancho máximo de la imagen */
+    max-height: 50px; /* Define la altura máxima de la imagen */
+    margin-left: 5px;
+    margin-right: 5px;
+
+    /* Ajustar margen entre las imágenes */
+    vertical-align: middle; /* Opcional: para alinear verticalmente las imágenes */
+}
+
+.product-images {
+    /* Alinear las imágenes en línea horizontalmente */
+    text-align: center;
+}
+
+.product-button {
+    /*background-color: #ff6600;
+    color: #fff;*/
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: #007bff; /* Color azul para los botones de paginación */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+}
+
+.pagination-button:hover {
+    background-color: #0056b3; /* Cambia de color al pasar el mouse */
+}
+
+
+/* Estilo para el contenedor principal */
+.product-detail-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content:center; /* Distribuye los elementos horizontalmente */
+}
+
+/* Estilo para el div del texto */
+.product-detail-text {
+    flex: 1; /* Hace que este div tome todo el espacio restante */
+}
+
+/* Estilo para el título del producto */
+.product-detail-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo para la descripción del producto */
+.product-detail-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para el precio del producto */
+.product-detail-price {
+    font-size: 35px;
+    font-weight: bold;
+    color: #e91e63; /* Color de precio personalizable */
+    text-align: center;
+}
+
+/* Estilo para la imagen del producto */
+.product-detail-image {
+    width: 500px; /* Define el ancho fijo deseado */
+    height: auto; /* Autoajusta la altura para mantener la proporción original */
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Efecto sombra */
+}
+
+
+/* Estilo para el botón "Agregar al Carrito" */
+.add-to-cart-button {
+    background-color: #69e91e; /* Color de fondo personalizable */
+    color: black;/* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño de fuente */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+}
+
+/* Estilo para el botón al pasar el mouse por encima */
+.add-to-cart-button:hover {
+    background-color: #bdeca7; /* Color de fondo al pasar el mouse por encima */
+}
+
+.add-to-cart-form {
+    text-align: center;
+}
+
+/* Estilo para el botón "Agregar al Carrito" */
+.remove-from-cart-button {
+    background-color: #f70727; /* Color de fondo personalizable */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño de fuente */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+}
+
+/* Estilo para el botón al pasar el mouse por encima */
+.remove-from-cart-button:hover {
+    background-color: #ee9a9a; /* Color de fondo al pasar el mouse por encima */
+}
+
+.total-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+
+/* ESTO LO AGREGUE PARA EL LOGIN */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 10;
+    padding: 10;
+}
+
+.divLog {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para el párrafo con la clase "registro" */
+.registro {
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espacio superior */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos para el enlace "Regístrate" dentro del párrafo con la clase "registro" */
+.registro a {
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    color: #007bff; /* Color del texto del enlace (azul en este caso) */
+    font-weight: bold; /* Texto en negrita */
+    width: 75%;
+}
+
+.registro input {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registro input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 80%;
+}
+
+/* Cambiar el color del enlace al pasar el mouse sobre él */
+.registro a:hover {
+    color: #0056b3; /* Color del texto del enlace al pasar el mouse */
+}
+
+.error-message {
+    color: red; /* Cambia el color del texto a rojo */
+    font-weight: bold; /* Hace el texto en negrita */
+    margin-top: 5px; /* Agrega un margen superior para separarlo de otros elementos */
+    font-size: 12px; /* Tamaño de fuente */
+}
+
+.user-session {
+    text-align: right; /* Alinea el contenido a la derecha */
+    color: blue; /* Cambia el color del texto a rojo */
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.user-session, .logout {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px; /* Espacio entre los divs */
+}
+
+.msj-session {
+    padding: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.logout [type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 75%;
+}
+
+/* Cambiar el color del enlace al pasar el mouse sobre él */
+.logout a:hover {
+    color: #0056b3; /* Color del texto del enlace al pasar el mouse */
+}
+
+.divLoggin {
+    max-width: auto;
+    margin-bottom: 2px;
+    margin-top: 0;
+    padding: 0;
+    background-color: #f5d9c9;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+

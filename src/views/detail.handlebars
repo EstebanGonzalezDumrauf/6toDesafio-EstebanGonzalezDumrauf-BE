@@ -1,0 +1,32 @@
+<div class="divLoggin">
+    <div class="container">
+        <div class="user-session">
+            <p class="msj-session">Bienvenido, <strong>{{user.nombre}} {{user.apellido}}</strong>!!!</p>
+            <p class="msj-session">{{user.rol}}</p>
+        </div>
+        <div class="logout">
+            <form id="log-out-session-Form" action="{{logout}}" method="post">
+                <input type="hidden">
+                <button class="Log-Out" type="submit">Salir</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="product-detail-container">
+    <div class="product-detail-text">
+        <h1 class="product-detail-title">{{product.title}}</h1>
+        <p class="product-detail-description">{{product.description}}</p>
+        <p class="product-detail-price"><strong>Precio:</strong> ${{product.price}}</p>
+
+        <form class="add-to-cart-form" action="{{cartUrl}}" method="post">
+            <input type="hidden" name="productId" value="{{product._id}}">
+            <button class="add-to-cart-button" type="submit">Agregar al Carrito</button>
+        </form>
+    </div>
+    <div class="product-images">
+        {{#each product.thumbnail}}
+            <img src="{{this}}" alt="Imagen del producto" class="product-detail-image">
+        {{/each}}
+    </div>
+</div>
+<script src="/js/logOutManager.js"></script>
